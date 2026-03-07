@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import JSZip from "jszip";
 
 const ScrollFrameHero = ({ children }: { children?: React.ReactNode }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
