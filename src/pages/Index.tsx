@@ -23,7 +23,7 @@ const Index = () => {
       {/* Scroll Frame Hero */}
       <section className="relative">
         <ScrollFrameHero />
-        <div className="absolute top-0 left-0 right-0 h-screen flex items-center justify-center z-10 pointer-events-none">
+        <div className="fixed top-0 left-0 right-0 h-screen flex items-center justify-center z-10 pointer-events-none" style={{ position: 'sticky' }}>
           <div className="text-center text-white px-4 animate-fade-in-up">
             <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6">
               Your Space, Reimagined
