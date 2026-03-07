@@ -93,9 +93,9 @@ const Navigation = () => {
                 </Link>
               ))}
               <Button asChild variant="default" className="w-full">
-                <Link to="/#envision" onClick={() => setIsOpen(false)}>
+                <a href="#envision" onClick={scrollToEnvision}>
                   Get Your Free Quote
-                </Link>
+                </a>
               </Button>
             </div>
           </div>
