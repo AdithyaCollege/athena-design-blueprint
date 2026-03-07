@@ -27,6 +27,12 @@ const Navigation = () => {
 
   const isActive = (path: string) => location.pathname === path;
 
+  const scrollToEnvision = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const element = document.getElementById("envision");
+    element?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled 
@@ -56,7 +62,7 @@ const Navigation = () => {
               </Link>
             ))}
             <Button asChild variant="default">
-              <Link to="/#envision">Get Your Free Quote</Link>
+              <a href="#envision" onClick={scrollToEnvision}>Get Your Free Quote</a>
             </Button>
           </div>
 
@@ -87,9 +93,9 @@ const Navigation = () => {
                 </Link>
               ))}
               <Button asChild variant="default" className="w-full">
-                <Link to="/#envision" onClick={() => setIsOpen(false)}>
+                <a href="#envision" onClick={scrollToEnvision}>
                   Get Your Free Quote
-                </Link>
+                </a>
               </Button>
             </div>
           </div>
