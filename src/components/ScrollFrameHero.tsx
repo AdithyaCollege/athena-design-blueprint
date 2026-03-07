@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import JSZip from "jszip";
 
-const ScrollFrameHero = () => {
+const ScrollFrameHero = ({ children }: { children?: React.ReactNode }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const framesRef = useRef<HTMLImageElement[]>([]);
@@ -151,6 +151,7 @@ const ScrollFrameHero = () => {
         />
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/40" />
+        {children}
 
         {/* Loading indicator */}
         {!loaded && (

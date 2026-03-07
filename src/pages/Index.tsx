@@ -22,24 +22,25 @@ const Index = () => {
 
       {/* Scroll Frame Hero */}
       <section className="relative">
-        <ScrollFrameHero />
-        <div className="absolute top-0 left-0 right-0 h-screen flex items-center justify-center z-10 pointer-events-none">
-          <div className="text-center text-white px-4 animate-fade-in-up">
-            <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6">
-              Your Space, Reimagined
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-white/90">
-              Curating spaces that feel like you
-            </p>
-            <Button
-              size="lg"
-              className="h-14 px-8 text-lg pointer-events-auto"
-              onClick={scrollToEnvision}
-            >
-              Get Your Free Quote
-            </Button>
+        <ScrollFrameHero>
+          <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+            <div className="text-center text-white px-4 animate-fade-in-up">
+              <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6">
+                Your Space, Reimagined
+              </h1>
+              <p className="text-xl md:text-2xl mb-8 text-white/90">
+                Curating spaces that feel like you
+              </p>
+              <Button
+                size="lg"
+                className="h-14 px-8 text-lg pointer-events-auto"
+                onClick={scrollToEnvision}
+              >
+                Get Your Free Quote
+              </Button>
+            </div>
           </div>
-        </div>
+        </ScrollFrameHero>
       </section>
 
       {/* Intro & Trust Section */}
