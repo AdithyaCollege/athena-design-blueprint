@@ -61,6 +61,9 @@ const ScrollFrameHero = ({ children }: { children?: React.ReactNode }) => {
     };
 
     loadFrames();
+    }, 100);
+
+    return () => clearTimeout(timeoutId);
   }, []);
 
   const drawFrame = (index: number) => {
