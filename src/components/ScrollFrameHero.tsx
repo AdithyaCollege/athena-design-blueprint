@@ -11,6 +11,8 @@ const ScrollFrameHero = ({ children }: { children?: React.ReactNode }) => {
   const rafRef = useRef<number>();
 
   useEffect(() => {
+    // Defer heavy zip loading to after initial paint to improve TTI
+    const timeoutId = setTimeout(() => {
     const loadFrames = async () => {
       try {
         const response = await fetch("/frames.zip");
@@ -59,6 +61,9 @@ const ScrollFrameHero = ({ children }: { children?: React.ReactNode }) => {
     };
 
     loadFrames();
+    }, 100);
+
+    return () => clearTimeout(timeoutId);
   }, []);
 
   const drawFrame = (index: number) => {
