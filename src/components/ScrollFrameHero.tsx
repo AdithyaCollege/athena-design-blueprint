@@ -165,22 +165,22 @@ const ScrollFrameHero = ({ children }: { children?: React.ReactNode }) => {
           ref={canvasRef}
           className="absolute inset-0 w-full h-full"
         />
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/40" />
+        {/* Dark overlay / loading background */}
+        <div className={`absolute inset-0 ${loaded ? 'bg-black/40' : 'bg-foreground/80'} transition-colors duration-700`} />
         {children}
 
-        {/* Loading indicator */}
+        {/* Loading indicator - below children so LCP text is immediately visible */}
         {!loaded && (
-          <div className="absolute inset-0 flex items-center justify-center bg-background">
+          <div className="absolute inset-x-0 bottom-8 flex justify-center z-[5]">
             <div className="text-center">
-              <div className="w-48 h-1.5 bg-muted rounded-full overflow-hidden mb-3">
+              <div className="w-48 h-1.5 bg-muted/30 rounded-full overflow-hidden mb-2">
                 <div
                   className="h-full bg-primary rounded-full transition-all duration-300"
                   style={{ width: `${loadProgress}%` }}
                 />
               </div>
-              <p className="text-sm text-muted-foreground">
-                Loading experience... {loadProgress}%
+              <p className="text-xs text-white/60">
+                Loading... {loadProgress}%
               </p>
             </div>
           </div>
