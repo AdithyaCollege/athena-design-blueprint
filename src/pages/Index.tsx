@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import EnvisionForm from "@/components/EnvisionForm";
-import heroImage from "@/assets/hero-living-room.jpg";
+import ScrollFrameHero from "@/components/ScrollFrameHero";
 import kitchenImage from "@/assets/project-kitchen.jpg";
 import bedroomImage from "@/assets/project-bedroom.jpg";
 import officeImage from "@/assets/project-office.jpg";
