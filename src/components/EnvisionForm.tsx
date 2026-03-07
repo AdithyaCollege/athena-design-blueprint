@@ -106,7 +106,7 @@ const EnvisionForm = () => {
               <span>Step {currentStep} of {totalSteps}</span>
               <span>{Math.round(progress)}%</span>
             </div>
-            <Progress value={progress} className="h-2" aria-label={`Form progress: step ${currentStep} of ${totalSteps}`} />
+            <Progress value={progress} className="h-2" />
           </div>
 
           {/* Step 1: Space Type */}

@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import EnvisionForm from "@/components/EnvisionForm";
-import ScrollFrameHero from "@/components/ScrollFrameHero";
+import heroImage from "@/assets/hero-living-room.jpg";
 import kitchenImage from "@/assets/project-kitchen.jpg";
 import bedroomImage from "@/assets/project-bedroom.jpg";
 import officeImage from "@/assets/project-office.jpg";
@@ -20,27 +20,29 @@ const Index = () => {
     <div className="min-h-screen">
       <Navigation />
 
-      {/* Scroll Frame Hero */}
-      <section className="relative">
-        <ScrollFrameHero>
-          <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-            <div className="text-center text-white px-4 animate-fade-in-up">
-              <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6">
-                Your Space, Reimagined
-              </h1>
-              <p className="text-xl md:text-2xl mb-8 text-white/90">
-                Curating spaces that feel like you
-              </p>
-              <Button
-                size="lg"
-                className="h-14 px-8 text-lg pointer-events-auto"
-                onClick={scrollToEnvision}
-              >
-                Get Your Free Quote
-              </Button>
-            </div>
-          </div>
-        </ScrollFrameHero>
+      {/* Hero Section */}
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${heroImage})` }}
+        >
+          <div className="absolute inset-0 bg-black/40"></div>
+        </div>
+        <div className="relative z-10 text-center text-white px-4 animate-fade-in-up">
+          <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6">
+            Your Space, Reimagined
+          </h1>
+          <p className="text-xl md:text-2xl mb-8 text-white/90">
+            Curating spaces that feel like you
+          </p>
+          <Button
+            size="lg"
+            className="h-14 px-8 text-lg"
+            onClick={scrollToEnvision}
+          >
+            Get Your Free Quote
+          </Button>
+        </div>
       </section>
 
       {/* Intro & Trust Section */}
@@ -110,7 +112,6 @@ const Index = () => {
                   <img
                     src={project.image}
                     alt={project.title}
-                    loading="lazy"
                     className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
