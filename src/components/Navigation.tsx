@@ -62,7 +62,7 @@ const Navigation = () => {
               </Link>
             ))}
             <Button asChild variant="default">
-              <Link to="/#envision">Get Your Free Quote</Link>
+              <a href="#envision" onClick={scrollToEnvision}>Get Your Free Quote</a>
             </Button>
           </div>
 
