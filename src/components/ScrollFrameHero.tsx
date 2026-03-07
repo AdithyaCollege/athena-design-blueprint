@@ -72,25 +72,36 @@ const ScrollFrameHero = ({ children }: { children?: React.ReactNode }) => {
     const img = frames[frameIndex];
     if (!img) return;
 
-    // Set canvas to window size
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    // Use devicePixelRatio for sharp rendering
+    const dpr = window.devicePixelRatio || 1;
+    const displayWidth = window.innerWidth;
+    const displayHeight = window.innerHeight;
+
+    canvas.width = displayWidth * dpr;
+    canvas.height = displayHeight * dpr;
+    canvas.style.width = `${displayWidth}px`;
+    canvas.style.height = `${displayHeight}px`;
+    ctx.scale(dpr, dpr);
+
+    // Enable image smoothing for better upscaling
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = "high";
 
     // Cover-fit the image
     const imgRatio = img.width / img.height;
-    const canvasRatio = canvas.width / canvas.height;
+    const canvasRatio = displayWidth / displayHeight;
 
     let drawWidth: number, drawHeight: number, drawX: number, drawY: number;
 
     if (canvasRatio > imgRatio) {
-      drawWidth = canvas.width;
-      drawHeight = canvas.width / imgRatio;
+      drawWidth = displayWidth;
+      drawHeight = displayWidth / imgRatio;
       drawX = 0;
-      drawY = (canvas.height - drawHeight) / 2;
+      drawY = (displayHeight - drawHeight) / 2;
     } else {
-      drawHeight = canvas.height;
-      drawWidth = canvas.height * imgRatio;
-      drawX = (canvas.width - drawWidth) / 2;
+      drawHeight = displayHeight;
+      drawWidth = displayHeight * imgRatio;
+      drawX = (displayWidth - drawWidth) / 2;
       drawY = 0;
     }
 
