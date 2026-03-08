@@ -56,14 +56,21 @@ const Index = () => {
 
         {/* Trust Banner */}
         <div className="absolute bottom-0 left-0 right-0 z-10 bg-black/30 backdrop-blur-sm border-t border-white/10 rounded-b-[2rem] md:rounded-b-[3rem] overflow-hidden">
-          <div className="py-5 flex items-center animate-marquee whitespace-nowrap">
-            {[...Array(2)].map((_, dupeIndex) => (
-              ["Architectural Digest", "Elle Decor", "Dwell", "House Beautiful", "Veranda", "Luxe Interiors"].map((name) => (
-                <span key={`${dupeIndex}-${name}`} className="text-white/60 text-xs md:text-sm font-semibold tracking-widest uppercase mx-8 md:mx-12 inline-block">
+          <div className="relative flex overflow-hidden py-5">
+            <div className="flex shrink-0 animate-marquee items-center">
+              {["Architectural Digest", "Elle Decor", "Dwell", "House Beautiful", "Veranda", "Luxe Interiors"].map((name) => (
+                <span key={`a-${name}`} className="text-white/60 text-xs md:text-sm font-semibold tracking-widest uppercase mx-8 md:mx-12 whitespace-nowrap">
                   {name}
                 </span>
-              ))
-            ))}
+              ))}
+            </div>
+            <div className="flex shrink-0 animate-marquee items-center" aria-hidden="true">
+              {["Architectural Digest", "Elle Decor", "Dwell", "House Beautiful", "Veranda", "Luxe Interiors"].map((name) => (
+                <span key={`b-${name}`} className="text-white/60 text-xs md:text-sm font-semibold tracking-widest uppercase mx-8 md:mx-12 whitespace-nowrap">
+                  {name}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </section>
