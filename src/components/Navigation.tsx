@@ -34,10 +34,10 @@ const Navigation = () => {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+    <nav className={`fixed top-4 left-4 right-4 z-50 transition-all duration-300 rounded-2xl ${
       isScrolled 
-        ? "bg-background/40 backdrop-blur-lg border-b border-white/20 shadow-lg" 
-        : "bg-background/95 backdrop-blur-sm border-b border-border"
+        ? "bg-background/40 backdrop-blur-lg border border-white/20 shadow-lg" 
+        : "bg-background/95 backdrop-blur-sm border border-border"
     }`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
