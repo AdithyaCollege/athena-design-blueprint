@@ -21,7 +21,7 @@ const Index = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative h-screen flex flex-col items-center justify-center overflow-hidden">
+      <section className="relative h-screen flex flex-col items-center justify-center overflow-hidden rounded-b-[2rem] md:rounded-b-[3rem]">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroImage})` }}
