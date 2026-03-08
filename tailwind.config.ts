@@ -83,7 +83,11 @@ export default {
           to: {
             height: "0",
           },
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" },
         },
+      },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -93,6 +97,7 @@ export default {
         "slide-in-right": "slide-in-right 0.5s ease-out",
         "slide-in-left": "slide-in-left 0.5s ease-out",
         "scale-in": "scale-in 0.4s ease-out",
+        marquee: "marquee 20s linear infinite",
       },
     },
   },
