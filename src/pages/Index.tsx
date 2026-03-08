@@ -21,12 +21,12 @@ const Index = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative h-screen flex flex-col items-center justify-center overflow-hidden rounded-b-[2rem] md:rounded-b-[3rem]">
+      <section className="relative h-[calc(100vh-2rem)] mx-4 mt-4 flex flex-col items-center justify-center overflow-hidden rounded-[2rem]">
         <div
-          className="absolute inset-0 bg-cover bg-center rounded-b-[2rem] md:rounded-b-[3rem]"
+          className="absolute inset-0 bg-cover bg-center rounded-[2rem]"
           style={{ backgroundImage: `url(${heroImage})` }}
         >
-          <div className="absolute inset-0 bg-black/50 rounded-b-[2rem] md:rounded-b-[3rem]"></div>
+          <div className="absolute inset-0 bg-black/50 rounded-[2rem]"></div>
         </div>
         <div className="relative z-10 text-center text-white px-4 animate-fade-in-up max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6 leading-tight">
@@ -55,7 +55,7 @@ const Index = () => {
         </div>
 
         {/* Trust Banner */}
-        <div className="absolute bottom-0 left-0 right-0 z-10 bg-black/30 backdrop-blur-sm border-t border-white/10 rounded-b-[2rem] md:rounded-b-[3rem]">
+        <div className="absolute bottom-0 left-0 right-0 z-10 bg-black/30 backdrop-blur-sm border-t border-white/10 rounded-b-[2rem]">
           <div className="container mx-auto px-4 py-5 flex items-center justify-center gap-8 md:gap-16 overflow-x-auto">
             {["Architectural Digest", "Elle Decor", "Dwell", "House Beautiful", "Veranda", "Luxe Interiors"].map((name) => (
               <span key={name} className="text-white/60 text-xs md:text-sm font-semibold tracking-widest uppercase whitespace-nowrap">
