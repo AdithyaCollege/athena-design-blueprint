@@ -55,12 +55,14 @@ const Index = () => {
         </div>
 
         {/* Trust Banner */}
-        <div className="absolute bottom-0 left-0 right-0 z-10 bg-black/30 backdrop-blur-sm border-t border-white/10 rounded-b-[2rem] md:rounded-b-[3rem]">
-          <div className="container mx-auto px-4 py-5 flex items-center justify-center gap-8 md:gap-16 overflow-x-auto">
-            {["Architectural Digest", "Elle Decor", "Dwell", "House Beautiful", "Veranda", "Luxe Interiors"].map((name) => (
-              <span key={name} className="text-white/60 text-xs md:text-sm font-semibold tracking-widest uppercase whitespace-nowrap">
-                {name}
-              </span>
+        <div className="absolute bottom-0 left-0 right-0 z-10 bg-black/30 backdrop-blur-sm border-t border-white/10 rounded-b-[2rem] md:rounded-b-[3rem] overflow-hidden">
+          <div className="py-5 flex items-center animate-marquee whitespace-nowrap">
+            {[...Array(2)].map((_, dupeIndex) => (
+              ["Architectural Digest", "Elle Decor", "Dwell", "House Beautiful", "Veranda", "Luxe Interiors"].map((name) => (
+                <span key={`${dupeIndex}-${name}`} className="text-white/60 text-xs md:text-sm font-semibold tracking-widest uppercase mx-8 md:mx-12 inline-block">
+                  {name}
+                </span>
+              ))
             ))}
           </div>
         </div>
