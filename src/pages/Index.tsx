@@ -26,7 +26,7 @@ const Index = () => {
           className="absolute inset-0 bg-cover bg-center rounded-b-[2rem] md:rounded-b-[3rem]"
           style={{ backgroundImage: `url(${heroImage})` }}
         >
-          <div className="absolute inset-0 bg-black/50"></div>
+          <div className="absolute inset-0 bg-black/50 rounded-b-[2rem] md:rounded-b-[3rem]"></div>
         </div>
         <div className="relative z-10 text-center text-white px-4 animate-fade-in-up max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6 leading-tight">
