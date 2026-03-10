@@ -21,50 +21,27 @@ const Index = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative h-screen flex flex-col items-center justify-center overflow-hidden rounded-b-[2rem] md:rounded-b-[3rem]">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center rounded-b-[2rem] md:rounded-b-[3rem]"
+          className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroImage})` }}
         >
-          <div className="absolute inset-0 bg-black/50 rounded-b-[2rem] md:rounded-b-[3rem]"></div>
+          <div className="absolute inset-0 bg-black/40"></div>
         </div>
-        <div className="relative z-10 text-center text-white px-4 animate-fade-in-up max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6 leading-tight">
-            Transform your space
-            <br />
-            into a sanctuary
+        <div className="relative z-10 text-center text-white px-4 animate-fade-in-up">
+          <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6">
+            Your Space, Reimagined
           </h1>
-          <p className="text-lg md:text-xl mb-10 text-white/80 max-w-2xl mx-auto">
-            Create timeless, livable interiors that reflect your unique
-            personality—with expert design guidance from concept to completion.
+          <p className="text-xl md:text-2xl mb-8 text-white/90">
+            Curating spaces that feel like you
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-0 max-w-md mx-auto bg-white/95 backdrop-blur-sm rounded-full p-1.5 shadow-xl">
-            <input
-              type="email"
-              placeholder="Email address"
-              className="flex-1 w-full sm:w-auto bg-transparent text-foreground placeholder:text-muted-foreground px-5 py-3 text-sm focus:outline-none rounded-full"
-            />
-            <Button
-              size="lg"
-              className="w-full sm:w-auto rounded-full h-11 px-6 text-sm font-semibold"
-              onClick={scrollToEnvision}
-            >
-              Get Your Free Quote →
-            </Button>
-          </div>
-        </div>
-
-        {/* Trust Banner */}
-        <div className="absolute bottom-0 left-0 right-0 z-10 bg-black/30 backdrop-blur-sm border-t border-white/10 rounded-b-[2rem] md:rounded-b-[3rem] overflow-hidden">
-          <div className="py-5 flex items-center animate-marquee whitespace-nowrap">
-            {[...Array(2)].map((_, dupeIndex) => (
-              ["Architectural Digest", "Elle Decor", "Dwell", "House Beautiful", "Veranda", "Luxe Interiors"].map((name) => (
-                <span key={`${dupeIndex}-${name}`} className="text-white/60 text-xs md:text-sm font-semibold tracking-widest uppercase mx-8 md:mx-12 inline-block">
-                  {name}
-                </span>
-              ))
-            ))}
-          </div>
+          <Button
+            size="lg"
+            className="h-14 px-8 text-lg"
+            onClick={scrollToEnvision}
+          >
+            Get Your Free Quote
+          </Button>
         </div>
       </section>
 
